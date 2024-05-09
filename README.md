@@ -7,4 +7,4 @@ Atualize a conexão do banco com sua connectionString em TodoList/appsettings.js
 
 Após feito isso, acesso o Console Gerenciador de Pacotes, escolha o projeto TodoList.Infra.Data e execute a geração das migrations -> Add-Migrations "nomeDaMigration".
 
-Por ultimo execute o comando Update-Database para gerar os dados e a tabela no banco de dados.
+Por ultimo execute o comando Update-Database para gerar a tabela no banco de dados.
