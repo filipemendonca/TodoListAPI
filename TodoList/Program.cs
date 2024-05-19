@@ -9,10 +9,8 @@ using TodoList.MapperProfiles;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
@@ -21,7 +19,7 @@ builder.Services.AddSwaggerGen(options =>
         Version = "v1",
         Title = "TodoList API",
         Description = "A simple todo list extremely useful for you!",
-        Contact = new OpenApiContact { Name = "Filipe Mendonça", Email = "filiperm15@gmail.com" }
+        Contact = new OpenApiContact { Name = "Filipe Mendonï¿½a", Email = "filiperm15@gmail.com" }
     });
 
     // using System.Reflection;
@@ -47,9 +45,12 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
+    //Enable migrations in development mode
+    DatabaseManagementService.ConfigureMigrations(app);
 }
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
