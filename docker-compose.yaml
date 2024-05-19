@@ -1,0 +1,24 @@
+version: "3.9" # optional since v1.27.0
+
+networks:
+  todolistapinetwork:
+
+services:
+  todolist_api:
+    build: . # build the Docker image
+    container_name: TodoListAPI
+    ports:
+      - "7259:80"
+    networks:
+      - todolistapinetwork
+  sql_server:
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    container_name: sql_server2022
+    platform: linux/amd64/v8
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=y
+      - SA_PASSWORD=Password@123
+    networks:
+      - todolistapinetwork
