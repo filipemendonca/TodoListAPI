@@ -13,17 +13,17 @@ namespace TodoList.Infra.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {            
-            // modelBuilder.Entity<Notes>(entity => {
-            //     entity.Property(x => x.Title)
-            //     .HasMaxLength(500)
-            //     .IsRequired();
+            modelBuilder.Entity<Notes>(entity => {
+                entity.Property(x => x.Title)
+                .HasMaxLength(500)
+                .IsRequired();
 
-            //     entity.Property(x => x.Content)
-            //     .HasMaxLength(5000)
-            //     .IsRequired();                
-            // });    dotnet ef migrations add Inicial
+                entity.Property(x => x.Content)
+                .HasMaxLength(5000)
+                .IsRequired();                
+            });    
 
-            NotesMap.Configuration(modelBuilder);        
+            // NotesMap.Configuration(modelBuilder);        
         }        
     }
 }

@@ -23,8 +23,7 @@ namespace TodoList.Controllers
 
         /// <summary>
         /// Get a entire list of notes on the database.
-        /// </summary>
-        /// <param name="id"></param>
+        /// </summary>        
         /// <returns>A list of all notes created.</returns>
         /// <response code="200">Return a success status code and the searched list of notes.</response>
         /// <response code="404">If the specific note not found.</response>
